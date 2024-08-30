@@ -3,21 +3,24 @@ require('ball')
 ---------------------------------------------------------
 
 function love.load()
-  
+  	
+	-- screen definitions 
 	ScreenW = love.graphics.getWidth()
  	ScreenH = love.graphics.getHeight()
-
+	
+	-- game physic world
 	World = love.physics.newWorld(0,0,true)
-  	
+
+	-- objects
   	Ball = Ball.Init(ScreenW/2,ScreenH/2)
 
 end
 
 function love.update(dt)
-
+	
 	World:update(dt)
-
 	Ball.update(dt)
+	
 end
 
 function love.draw()
