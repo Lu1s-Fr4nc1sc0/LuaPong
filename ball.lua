@@ -3,15 +3,17 @@ Ball = {}
 function Ball.Init(x,y)
 
 	local self = self or table
-
+	-- self vars
 	self.x = x
 	self.y = y
 	self.w = 16
 	self.h = 16
+	-- self physics 
 	self.body = love.physics.newBody(World,x,y,'dynamic')
 	self.shape = love.physics.newRectangleShape(self.w,self.h)
 	self.fixture = love.physics.newFixture(self.body,self.shape,1.0)
-	self.movement = {x = 0, y = 128}
+	-- self movement
+	self.movement = {x = 0, y = 0}
   
 	function self.update(dt)
   		self.body:setLinearVelocity(self.movement.x,self.movement.y)
