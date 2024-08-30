@@ -24,6 +24,11 @@ function Ball.Init(x,y)
 		self.body:getY(),self.w,self.h)
 	end
 
+	function self.keypressed(k)
+		if (k == "space" and self.movement.y == 0 )then self.movement.y = 120 end
+			
+	end
+
   return self
  
 end
