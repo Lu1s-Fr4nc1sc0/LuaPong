@@ -35,7 +35,7 @@ function love.update(dt)
 	else Player.movement.x = 0
 	end
 	---Game Over
-	if Ball.movement.y >= ScreenH then
+	if Ball.body:getY() >= ScreenH then
 		love.event.quit('restart')
 	end
 
