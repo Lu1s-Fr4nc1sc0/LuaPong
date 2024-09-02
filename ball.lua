@@ -1,7 +1,5 @@
 Ball = {}
-
 function Ball.new(x,y,name)
-
 	local self = self or {}
 	-- self vars
 	self.x = x
@@ -16,22 +14,16 @@ function Ball.new(x,y,name)
 	self.fixture:setUserData(name)
 	-- self movement
 	self.movement = {x = 0, y = 0}
-  
+	--self functions
 	function self.update(dt)
   		self.body:setLinearVelocity(self.movement.x,self.movement.y)
 		if self.movement.y >= 860 then self.movement.y = 860 end
 	end
-
 	function self.draw()
-		love.graphics.rectangle('fill',self.body:getX() - self.w/2,
-		self.body:getY() - self.h/2,self.w,self.h)
+		love.graphics.rectangle('fill',self.body:getX() - self.w/2,self.body:getY() - self.h/2,self.w,self.h)
 	end
-
 	function self.keypressed(k)
-		if (k == "space" and self.movement.y == 0 )then self.movement.y = 120 end
-			
+		if (k == "space" and self.movement.y == 0 )then self.movement.y = 120 end	
 	end
-
   return self
- 
 end
